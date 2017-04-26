@@ -141,7 +141,26 @@ div.round-pic {
 
 /* ANIMATIONS */
 
-.enter-from-left {
+p:not(.anim), ul:not(.anim), a:not(.anim) {
+  animation: 0.9s linear 0s 1 fadeIn;
+}
+
+@keyframes fadeIn {
+  
+  0% {
+    opacity: 0;
+  }
+  /* delay until slide ins complete */
+  66% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.anim.enter-from-left {
   animation: 0.6s ease-out 0s 1 slideFromLeft;
 }
 
@@ -154,7 +173,7 @@ div.round-pic {
   }
 }
 
-.enter-from-right {
+.anim.enter-from-right {
   animation: 0.6s ease-out 0s 1 slideFromRight;
 }
 
@@ -167,12 +186,12 @@ div.round-pic {
   }
 }
 
-.roll-from-right {
-  animation: 1.5s ease-out 0s 1 rollFromRight;
+.anim.roll-from-right {
+  animation: 0.9s ease-out 0s 1 rollFromRight;
 }
 
-.roll-from-left {
-  animation: 1.5s ease-out 0s 1 rollFromLeft;
+.anim.roll-from-left {
+  animation: 0.9s ease-out 0s 1 rollFromLeft;
 }
 
 @media only screen and (max-device-width: 1080px) {
@@ -218,7 +237,7 @@ div.round-pic {
     transform: translateX(50vw);
   }
 
-  33% {
+  15% {
     transform: translateX(50vw) rotate(0.5turn);
   }
 
@@ -233,7 +252,7 @@ div.round-pic {
     transform: translateX(-50vw);
   }
 
-  33% {
+  15% {
     transform: translateX(-50vw) rotate(-0.5turn);
   }
 
