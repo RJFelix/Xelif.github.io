@@ -133,6 +133,7 @@ div.round-pic {
 }
 
 .linkbar-hex-container {
+  height: 40px;
   flex: 0 0;
   transition: 300ms;
 }
