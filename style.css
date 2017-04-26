@@ -133,8 +133,7 @@ div.round-pic {
 }
 
 .linkbar-hex-container {
-  height: 40px;
-  flex: 0 0 40px;
+  flex: 0 0;
   transition: 300ms;
 }
 
@@ -158,13 +157,11 @@ div.round-pic {
 .linkbar-hex-text {
   display: none;
   text-align: center;
-  padding-left: 5px;
+  padding-left: 15px;
   font-size: 0.75em;
   color: #f5f5f5;
   position: absolute;
   top: 5px;
-  z-index: 0;
-  opacity: 0;
 }
 
 .linkbar-hex-img {
@@ -176,8 +173,6 @@ div.round-pic {
 
 .linkbar-hex-container:hover .linkbar-hex-text {
   display: inline;
-  padding-left: 15px;
-  opacity: 1;
 }
 
 .linkbar-hex-container:hover .linkbar-hex {
@@ -196,15 +191,9 @@ div.round-pic {
   transition: width 300ms;
 }
 
-.linkbar-hex-container:hover .linkbar-hex:before {
-	content: "";
-	position: absolute;
-	top: -10px;
+.linkbar-hex-container:hover .linkbar-hex:before,
+.linkbar-hex-container:hover .linkbar-hex:after {
 	width: 80px;
-	height: 0;
-	border-left: 20px solid transparent;
-	border-right: 20px solid transparent;
-	border-bottom: 10px solid #2a2a2a;
 }
 
 .linkbar-hex:after {
@@ -218,18 +207,6 @@ div.round-pic {
 	border-right: 20px solid transparent;
 	border-top: 10px solid #2a2a2a;
   transition: width 300ms;
-}
-
-.linkbar-hex-container:hover .linkbar-hex:after {
-	content: "";
-	position: absolute;
-	bottom: -10px;
-	left: 0;
-	width: 80px;
-	height: 0;
-	border-left: 20px solid transparent;
-	border-right: 20px solid transparent;
-	border-top: 10px solid #2a2a2a;
 }
 
 #City {
