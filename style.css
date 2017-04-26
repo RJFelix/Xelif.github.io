@@ -101,7 +101,6 @@ div.horizontal-line {
   height: 4px;
   width: 100%;
   margin-bottom: 18px;
-  border-radius: 8px;
 }
 
 div.round-pic {
@@ -119,12 +118,121 @@ div.round-pic {
   height: 100%; 
 }
 
+.linkbar-container {
+  display: flex;
+  justify-content: center;
+}
+
+.linkbar-line-before {
+  flex: 3 0;
+}
+
+.linkbar-line-after {
+  flex: 1 1;
+}
+
+.linkbar-hex-container {
+  height: 40px;
+  flex: 0 0 40px;
+}
+
+.linkbar-hex-container:hover {
+  flex: 0 0 120px;
+}
+
+/*.linkbar-hex-container:first-of-type {
+  margin-left: 20px;
+}*/
+
+.linkbar-hex {
+	width: 40px;
+	height: 22px;
+	background: #2a2a2a;
+	position: relative;
+  top: -11px;
+}
+
+.linkbar-hex-text {
+  display: none;
+  text-align: center;
+  padding-left: 5px;
+  font-size: 0.75em;
+  color: #f5f5f5;
+}
+
+.linkbar-hex-img {
+  width: 24px;
+  height: 24px;
+  padding-left: 8.5px;
+}
+
+.linkbar-hex-container:hover .linkbar-hex-text {
+  display: inline;
+  position: absolute;
+  top: 5px;
+  padding-left: 15px;
+}
+
+.linkbar-hex-container:hover .linkbar-hex {
+  width: 120px;
+}
+
+.linkbar-hex:before {
+	content: "";
+	position: absolute;
+	top: -10px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-bottom: 10px solid #2a2a2a;
+}
+
+.linkbar-hex-container:hover .linkbar-hex:before {
+	content: "";
+	position: absolute;
+	top: -10px;
+	left: 0;
+	width: 80px;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-bottom: 10px solid #2a2a2a;
+}
+
+.linkbar-hex:after {
+	content: "";
+	position: absolute;
+	bottom: -10px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 10px solid #2a2a2a;
+}
+
+.linkbar-hex-container:hover .linkbar-hex:after {
+	content: "";
+	position: absolute;
+	bottom: -10px;
+	left: 0;
+	width: 80px;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 10px solid #2a2a2a;
+}
+
 #City {
   margin-top: 0px;
+  transform: translateY(-20px);
 }
 
 #State {
   margin-top: 5px;
+  transform: translateY(-20px);
 }
 
 #React-pic {
@@ -141,9 +249,9 @@ div.round-pic {
 
 /* ANIMATIONS */
 
-p:not(.anim), ul:not(.anim), a:not(.anim) {
+/*p:not(.anim), ul:not(.anim), a:not(.anim) {
   animation: 0.9s linear 0s 1 fadeIn;
-}
+}*/
 
 @keyframes fadeIn {
   
@@ -187,11 +295,51 @@ p:not(.anim), ul:not(.anim), a:not(.anim) {
 }
 
 .anim.roll-from-right {
-  animation: 0.9s ease-out 0s 1 rollFromRight;
+  animation: 1.26s ease-out 0s 1 rollFromRight;
 }
 
 .anim.roll-from-left {
-  animation: 0.9s ease-out 0s 1 rollFromLeft;
+  animation: 1.26s ease-out 0s 1 rollFromLeft;
+}
+
+@keyframes rollFromRight {
+  /* delay 0.5s */
+  0% {
+    transform: translateX(50vw) rotate(0.5turn);
+  }
+
+  11% {
+    transform: translateX(50vw) rotate(0.5turn);
+  }
+
+  71% {
+    transform: translateX(-5.2px) rotate(-1.0085turn);
+  }
+
+  100% {
+    transform: translateX(0) rotate(-1turn);
+    animation-timing-function: ease-in;
+  }
+}
+
+@keyframes rollFromLeft {
+  /* delay 0.5s */
+  0% {
+    transform: translateX(-50vw);
+  }
+
+  11% {
+    transform: translateX(-50vw) rotate(-0.5turn);
+  }
+
+  65% {
+    transform: translateX(5.2px) rotate(1.0085turn);
+  }
+
+  100% {
+    transform: translateX(0) rotate(1turn);
+    animation-timing-function: ease-in;
+  }
 }
 
 @media only screen and (max-device-width: 1080px) {
@@ -228,35 +376,5 @@ p:not(.anim), ul:not(.anim), a:not(.anim) {
     100% {
       transform: translateX(0) rotate(1turn);
     }
-  }
-}
-
-@keyframes rollFromRight {
-  /* delay 0.5s */
-  0% {
-    transform: translateX(50vw);
-  }
-
-  15% {
-    transform: translateX(50vw) rotate(0.5turn);
-  }
-
-  100% {
-    transform: translateX(0) rotate(-1turn);
-  }
-}
-
-@keyframes rollFromLeft {
-  /* delay 0.5s */
-  0% {
-    transform: translateX(-50vw);
-  }
-
-  15% {
-    transform: translateX(-50vw) rotate(-0.5turn);
-  }
-
-  100% {
-    transform: translateX(0) rotate(1turn);
   }
 }
